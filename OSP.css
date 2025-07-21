@@ -1,0 +1,68 @@
+/* Order Confirmation Page */
+.order-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: var(--white);
+}
+
+.order-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    background: var(--nav-bg);
+    color: var(--white);
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.form-group button:disabled {
+    background: var(--grey);
+    cursor: not-allowed;
+}
+
+#confirmationMessage {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+#confirmationMessage.visible {
+    display: block;
+}

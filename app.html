@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            color: var(--white);
+        }
+
+        .modal-content h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid var(--grey);
+            border-radius: 5px;
+            background: var(--nav-bg);
+            color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-group button:disabled {
+            background: var(--grey);
+            cursor: not-allowed;
+        }
+
+        #confirmationMessage {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+
+        #confirmationMessage.visible {
+            display: block;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Animation -->
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+    </div>
+
+    <!-- Top Text Section -->
+    <section class="top-txt">
+        <div class="head container">
+            <div class="head-txt">
+                <p>Free shipping, 30-day return or refund guarantee.</p>
+            </div>
+            <div class="sing_in_up">
+                <a href="#">SIGN IN</a>
+                <a href="#">SIGN UP</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <input type="checkbox" id="checkbox">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sellers">Shop</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="logo">
+                <img src="https://i.postimg.cc/TP6JjSTt/logo.webp" alt="Logo">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home_page">
+            <div class="home_img">
+                <img src="https://i.postimg.cc/t403yfn9/home2.jpg" alt="Home Image" data-src="https://i.postimg.cc/t403yfn9/home2.jpg">
+            </div>
+            <div class="home_txt">
+                <p class="collectio">SUMMER COLLECTION</p>
+                <h2>FALL - WINTER<br>Collection 2023</h2>
+                <div class="home_label">
+                    <p>A specialist label creating luxury essentials. Ethically crafted<br>with an unwavering commitment to exceptional quality.</p>
+                </div>
+                <button><a href="#sellers">SHOP NOW</a><i class='bx bx-right-arrow-alt'></i></button>
+                <div class="home_social_icons">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-pinterest'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collection">
+        <div class="collections container">
+            <div class="content">
+                <img src="https://i.postimg.cc/Xqmwr12c/clothing.webp" alt="Clothing Collection" data-src="https://i.postimg.cc/Xqmwr12c/clothing.webp">
+                <div class="img-content">
+                    <p>Clothing Collections</p>
+                    <button><a href="#sellers">SHOP NOW</a></button>
+                </div>
+            </div>
+            <div class="content2">
+                <img src="https://i.postimg.cc/8CmBZH5N/shoes.webp" alt="Shoes Spring" data-src="https://i.postimg.cc/8CmBZH5N/shoes.webp">
+                <div class="img-content2">
+                    <p>Shoes Spring</p>
+                    <button><a href="#sellers">SHOP NOW</a></button>
+                </div>
+            </div>
+            <div class="content3">
+                <img src="https://i.postimg.cc/MHv7KJYp/access.webp" alt="Accessories" data-src="https://i.postimg.cc/MHv7KJYp/access.webp">
+                <div class="img-content3">
+                    <p>Accessories</p>
+                    <button><a href="#sellers">SHOP NOW</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Confirmation Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Order Confirmation</h2>
+            <form id="orderForm">
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <!-- Delivery Address -->
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea>
+                </div>
+
+                <!-- OTP Section -->
+                <div class="form-group">
+                    <label for="otp">OTP</label>
+                    <input type="text" id="otp" name="otp" placeholder="Enter OTP" disabled>
+                    <button type="button" id="generateOTP">Generate OTP</button>
+                </div>
+
+                <!-- Confirm Order Button -->
+                <div class="form-group">
+                    <button type="submit" id="confirmOrder" disabled>Confirm Order</button>
+                </div>
+            </form>
+
+            <!-- Order Confirmation Message -->
+            <div id="confirmationMessage" class="hidden">
+                <h3>Thank you for your order!</h3>
+                <p>Your order has been confirmed. We will deliver it to your address shortly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // OTP Generation and Order Confirmation Logic
+        document.addEventListener("DOMContentLoaded", function () {
+            const orderModal = document.getElementById("orderModal");
+            const closeModal = document.querySelector(".close-modal");
+            const generateOTPButton = document.getElementById("generateOTP");
+            const otpInput = document.getElementById("otp");
+            const confirmOrderButton = document.getElementById("confirmOrder");
+            const confirmationMessage = document.getElementById("confirmationMessage");
+            let generatedOTP = "";
+
+            // Open Modal on Buy Now Button Click
+            document.querySelectorAll(".buy-now button").forEach(button => {
+                button.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    orderModal.style.display = "flex";
+                });
+            });
+
+            // Close Modal
+            closeModal.addEventListener("click", function () {
+                orderModal.style.display = "none";
+            });
+
+            // Generate OTP
+            generateOTPButton.addEventListener("click", function () {
+                generatedOTP = Math.floor(1000 + Math.random() * 9000).toString(); // 4-digit OTP
+                alert(`Your OTP is: ${generatedOTP}`);
+                otpInput.disabled = false;
+                confirmOrderButton.disabled = false;
+            });
+
+            // Confirm Order
+            document.getElementById("orderForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const enteredOTP = otpInput.value;
+
+                if (enteredOTP === generatedOTP) {
+                    confirmationMessage.classList.add("visible");
+                    document.getElementById("orderForm").reset();
+                    otpInput.disabled = true;
+                    confirmOrderButton.disabled = true;
+                } else {
+                    alert("Invalid OTP. Please try again.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
